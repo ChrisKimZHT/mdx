@@ -10,6 +10,7 @@
 2. (functions.php) 评论邮件回复
 3. (functions.php) 支持上传WebP
 4. (functions.php) 支持媒体库WebP缩略图
+5. (functions.php) 修复WordPress搜索结果为空但返回为200的问题
 
 ### 修改内容
 

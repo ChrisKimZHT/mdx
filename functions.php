@@ -45,3 +45,17 @@ function webp_is_displayable_image($result, $path)
     return $result;
 }
 add_filter('file_is_displayable_image', 'webp_is_displayable_image');
+
+/* #5 修复WordPress搜索结果为空但返回为200的问题
+   @author ivampiresp <im@ivampiresp.com> */
+function search_404_fix_template_redirect()
+{
+    if (is_search()) {
+        global $wp_query;
+
+        if ($wp_query->found_posts == 0) {
+            status_header(404);
+        }
+    }
+}
+add_action('template_redirect', 'search_404_fix_template_redirect');
