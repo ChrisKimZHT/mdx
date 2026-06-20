@@ -1,3 +1,6 @@
+> [!NOTE]
+> This repository is a personal maintenance version of [MDx](https://github.com/yrccondor/mdx) after the original author stopped maintaining the project. It is maintained by [ChrisKimZHT](https://www.zouht.com) with bug fixes and feature additions.
+
 <div align="right">Language: English | <a title="Chinese" href="https://github.com/yrccondor/mdx/blob/master/README/zh_CN.md">Chinese</a> | <a title="Turkish" href="https://github.com/yrccondor/mdx/blob/master/README/tr_TR.md">Turkish</a></div>
 
 <br>
