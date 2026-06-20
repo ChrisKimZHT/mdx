@@ -14,6 +14,17 @@ let previewShown = false;
 let mdx_toc = undefined;
 let isInited = false;
 
+function escapeRegExp(text) {
+    return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function getMatchingTitlePrefixLength(titleText, tocIndex) {
+    const pattern = new RegExp(`^\\s*${escapeRegExp(tocIndex)}(?:\\s+|[、)）:：]\\s*|[.．](?!\\d)\\s*|$)`);
+    const match = titleText.match(pattern);
+
+    return match ? match[0].length : 0;
+}
+
 window.addEventListener('DOMContentLoaded', () => {
     let tocHTML = getTitleListHtml();
     addToc(tocHTML[0]);
@@ -108,10 +119,15 @@ function getTitleListHtml(minLevel = 1, maxLevel = 6) {
         titles.forEach((_, i) =>
             i >= level ? (titles[i] = 0) : titles[i] === 0 && (titles[i] = 1)
         );
+        const tocIndex = titles
+            .filter((_, i) => i + 1 >= minLevel && i < level)
+            .join('.');
+        const titlePrefixLength = getMatchingTitlePrefixLength(title.textContent, tocIndex);
+        const titleText = titlePrefixLength > 0 ? title.textContent.slice(titlePrefixLength) : title.textContent;
 
         const titleNode = document.createElement('a');
         titleNode.id = `mdx-toc-${counter}-item`;
-        titleNode.title = title.textContent;
+        titleNode.title = titleText;
         titleNode.classList.add('mdui-list-item', 'mdui-ripple', 'mdx-toc-item');
 
         if (level > 1) {
@@ -119,12 +135,10 @@ function getTitleListHtml(minLevel = 1, maxLevel = 6) {
         }
 
         const titleNodeSpan = document.createElement('span');
-        titleNodeSpan.textContent = titles
-            .filter((_, i) => i + 1 >= minLevel && i < level)
-            .join('.');
+        titleNodeSpan.textContent = tocIndex;
 
         const tilteNodeContent = document.createElement('div');
-        tilteNodeContent.textContent = title.textContent;
+        tilteNodeContent.textContent = titleText;
 
         titleNode.appendChild(titleNodeSpan);
         titleNode.appendChild(tilteNodeContent);
