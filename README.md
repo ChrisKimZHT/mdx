@@ -14,8 +14,8 @@
 > Looks light, power inside.
 
 <p align="center">
-<img alt="Version" src="https://img.shields.io/badge/version-2.0.4-3f51b5.svg?style=flat-square"/>
-<a href="https://flyhigher.top"><img alt="Author" src="https://img.shields.io/badge/author-Axton-red.svg?style=flat-square"/></a>
+<img alt="Version" src="https://img.shields.io/badge/version-2.0.5-6a123f4.svg?style=flat-square"/>
+<a href="https://flyhigher.top"><img alt="Author" src="https://img.shields.io/badge/author-Axton&nbsp;&amp;&nbsp;ChrisKimZHT-red.svg?style=flat-square"/></a>
 <img alt="WordPress" src="https://img.shields.io/badge/WordPress-5.0%2B-blue.svg?style=flat-square"/>
 <a href="https://mdx.flyhigher.top"><img alt="Download" src="https://img.shields.io/badge/download-2.49M-brightgreen.svg?style=flat-square"/></a>
 <a href="https://github.com/yrccondor/mdx/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-GPL%20V3.0-orange.svg?style=flat-square"/></a>
