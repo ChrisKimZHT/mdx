@@ -411,8 +411,8 @@ function get_the_link_items($id = null) {
                 $link_notes = trim($bookmark->link_notes);
                 $link_notes_html = $link_notes === '' ? '' : '<div class="mdui-card-content">'.$bookmark->link_notes.'</div>';
                 $output .= '
-                <div class="mdui-row mdui-col-xs-12 mdui-col-sm-6 mdui-col-md-4 links-co-card">
-                  <div class="mdui-card">
+                <div class="mdui-row mdui-col-xs-12 mdui-col-sm-6 mdui-col-md-4 mdui-col-xl-3 links-co-card">
+                  <div class="mdui-card mdx-links-card">
                     <div class="mdui-card-header">
                       <div class="mdui-card-header-avatar mdx-links-avatar-card '.$lazy_load.'"></div>
                       <div class="mdui-card-header-title">'.$bookmark->link_name.'</div>

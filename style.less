@@ -2178,13 +2178,26 @@ div.mdui-toolbar > .mdui-typo-headline {
     overflow: hidden;
 }
 .links-co-card {
-    margin-top: 5px;
-    padding-left: 3px !important;
-    padding-right: 3px !important;
+    margin-top: 8px;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
     border-radius: 3px;
 }
+.mdx-links-card {
+    overflow: hidden;
+    border-top: 3px solid rgba(var(--mdx-theme-color), .75);
+    .mdui-card-actions {
+        border-top: 1px solid rgba(0, 0, 0, .12);
+    }
+}
+.mdui-theme-layout-dark .mdx-links-card {
+    .mdui-card-actions {
+        border-top-color: rgba(255, 255, 255, .2);
+    }
+}
+
 .links-des-grid {
     left: 3px;
     width: calc(100% - 6px);
@@ -2220,8 +2233,13 @@ div.mdui-toolbar > .mdui-typo-headline {
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, .12);
     opacity: 0;
     transition: opacity .3s;
+}
+.mdui-theme-layout-dark .mdx-links-avatar-card {
+    border-color: rgba(255, 255, 255, .2);
 }
 .mdx-links-avatar-card.mdx-bg-loaded {
     opacity: 1;
