@@ -408,6 +408,8 @@ function get_the_link_items($id = null) {
                 } else {
                     $rss_html = '';
                 }
+                $link_notes = trim($bookmark->link_notes);
+                $link_notes_html = $link_notes === '' ? '' : '<div class="mdui-card-content">'.$bookmark->link_notes.'</div>';
                 $output .= '
                 <div class="mdui-row mdui-col-xs-12 mdui-col-sm-6 mdui-col-md-4 links-co-card">
                   <div class="mdui-card">
@@ -416,7 +418,7 @@ function get_the_link_items($id = null) {
                       <div class="mdui-card-header-title">'.$bookmark->link_name.'</div>
                       <div class="mdui-card-header-subtitle">'.$bookmark->link_description.'</div>
                     </div>
-                    <div class="mdui-card-content">'.$bookmark->link_notes.'</div>
+                    '.$link_notes_html.'
                     <div class="mdui-card-actions">
                       <button class="mdui-btn mdui-ripple">
                         <a '.$rel.'href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'">前往</a>
