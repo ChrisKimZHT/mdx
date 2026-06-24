@@ -21,6 +21,25 @@ function mdx_get_option($option_name) {
     return false;
 }
 
+function mdx_is_newer_version($version, $current_version = null) {
+    $version = trim((string) $version);
+    $current_version = trim((string) ($current_version === null ? get_option('mdx_version') : $current_version));
+
+    if ($version === '' || $current_version === '') {
+        return false;
+    }
+
+    if (!preg_match('/^[0-9]+(?:\.[0-9A-Za-z]+)*(?:[-+_][0-9A-Za-z.]+)?$/', $version) || !preg_match('/^[0-9]+(?:\.[0-9A-Za-z]+)*(?:[-+_][0-9A-Za-z.]+)?$/', $current_version)) {
+        return false;
+    }
+
+    return version_compare($version, $current_version, '>');
+}
+
+function mdx_has_new_version() {
+    return mdx_is_newer_version(get_option('mdx_new_ver'));
+}
+
 $mdx_now_url = '';
 $mdx_flag_subdir = false;
 if (stripos(explode('//', home_url())[1], '/') || mdx_get_option('mdx_install') === 'sub') {

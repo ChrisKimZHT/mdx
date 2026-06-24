@@ -136,7 +136,7 @@ wp_enqueue_script( 'wp-color-picker' );
         </div>
 		<?php
 	} ?>
-	<?php if ( get_option( 'mdx_new_ver' ) != get_option( 'mdx_version' ) ) { ?>
+	<?php if ( mdx_has_new_version() ) { ?>
         <div class="notice notice-info is-dismissible">
             <p><?php _e( 'MDx 已发布新版本 ', 'mdx' );
 				echo get_option( 'mdx_new_ver' );
