@@ -1,2 +1,2 @@
 <?php //此文件内容会由构建工具自动生成
-if(get_option('mdx_version_commit')!='2.0.6.d92d1c3'){update_option('mdx_version', '2.0.6');update_option('mdx_version_commit', '2.0.6.d92d1c3');}?>
+if(get_option('mdx_version_commit')!='2.0.7.0b07c79'){update_option('mdx_version', '2.0.7');update_option('mdx_version_commit', '2.0.7.0b07c79');}?>
