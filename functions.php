@@ -420,9 +420,7 @@ function get_the_link_items($id = null) {
             } elseif ($mdx_v_friendly_links_style == '1') {
                 if ($bookmark->link_rss != null) {
                     $rss_html = '
-                    <button class="mdui-btn mdui-ripple">
-                      <a '.$rel.'href="'.$bookmark->link_rss.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'">RSS</a>
-                    </button>
+                    <a class="mdui-btn mdui-ripple" '.$rel.'href="'.$bookmark->link_rss.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'">RSS</a>
                     ';
                 } else {
                     $rss_html = '';
@@ -439,9 +437,7 @@ function get_the_link_items($id = null) {
                     </div>
                     '.$link_notes_html.'
                     <div class="mdui-card-actions">
-                      <button class="mdui-btn mdui-ripple">
-                        <a '.$rel.'href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'">前往</a>
-                      </button>
+                      <a class="mdui-btn mdui-ripple" '.$rel.'href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'">前往</a>
                       '.$rss_html.'
                     </div>
                   </div>
