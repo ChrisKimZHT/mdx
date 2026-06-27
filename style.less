@@ -2632,7 +2632,7 @@ article img.mdx-img-in-post {
     cursor: zoom-in;
 }
 article > img.mdx-img-in-post {
-    margin: 10px 0;
+    margin: 10px 0 20px;
 }
 .mdx-comment-login-needed {
     margin-top: 20px;
@@ -3504,6 +3504,10 @@ body.mdui-theme-layout-dark input#s::placeholder {
     margin: 10px 0 !important;
     display: block;
     width: 100%;
+}
+article > .mdx-lazyload-container,
+article > a > .mdx-lazyload-container {
+    margin-bottom: 20px !important;
 }
 .wp-block-gallery .blocks-gallery-item .mdx-lazyload-container {
     margin: 0 !important;
@@ -4464,6 +4468,9 @@ body.mdx-index-void {
     height: 100%;
     max-width: 100%!important;
     margin: 0!important;
+}
+article .wp-block-image:not(:has(figcaption)) {
+    margin-bottom: 20px !important;
 }
 @media (max-width: 800px) {
     .mdx-wide-post-list .post-item {
